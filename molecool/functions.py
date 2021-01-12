@@ -8,7 +8,7 @@ Handles the primary functions
 import numpy as np
 import matplotlib.pyplot as plt
 
-from mpl_toolkits.mplot3d import Axes3D  # noqa : F401
+from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
 
 
 def calculate_distance(rA, rB):
@@ -176,6 +176,9 @@ def bond_histogram(bond_list, save_location=None, dpi=300, graph_min=0, graph_ma
 
 def build_bond_list(coordinates, max_bond=1.5, min_bond=0):
 
+    if min_bond < 0:
+        raise ValueError("The minimum bond length cannot be less than zero.")
+        
     # Find the bonds in a molecule (set of coordinates) based on distance criteria.
     bonds = {}
     num_atoms = len(coordinates)
