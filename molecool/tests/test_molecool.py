@@ -22,6 +22,19 @@ def methane_molecule():
 
     return symbols, coordinates
 
+def test_calculate_angle():
+    r1 = np.array([0, 0,-1])
+    r2 = np.array([0, 0, 0]) 
+    r3 = np.array([1, 0, 0])
+
+    expected_value = 90
+    calculated_value =  molecool.calculate_angle(r1, r2, r3, degrees = True)
+    assert expected_value == calculated_value
+
+    expected_value_rad = np.pi / 2
+    calculated_value_rad =  molecool.calculate_angle(r1, r2, r3)
+    assert expected_value_rad == calculated_value_rad
+    
 @pytest.mark.skip
 def test_build_bond_list_failure(methane_molecule):
     """ Test that bond list fails as expected with ValueError for negative minbonds"""
