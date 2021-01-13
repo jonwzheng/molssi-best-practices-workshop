@@ -5,6 +5,9 @@
 
 Welcome to molecool's documentation!
 =========================================================
+molecool is a Python package which can read in, perform analysis, and visualize molecular coordinates.
+
+This is a fake package for a workshop.
 
 .. toctree::
    :maxdepth: 2
