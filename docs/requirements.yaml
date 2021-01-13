@@ -9,5 +9,7 @@ dependencies:
 
 
     # Pip-only installs
-  #- pip:
+  - pip:
+    - sphinx
+    - sphinx-rtd-theme
 
