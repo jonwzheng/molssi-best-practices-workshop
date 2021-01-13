@@ -191,13 +191,14 @@ def build_bond_list(coordinates, max_bond=1.5, min_bond=0):
 
     return bonds
 
+
 def calculate_molecular_mass(symbols):
     """Calculate the mass of a molecule.
     Parameters
     ----------
     symbols : list
         A list of elements.
-   
+
     Returns
     -------
     mass : float
@@ -210,6 +211,7 @@ def calculate_molecular_mass(symbols):
     for atom in symbols:
         running_weight += atomic_weights[atom]
     return running_weight
+
 
 def calculate_center_of_mass(symbols, coordinates):
     """Calculate the center of mass of a molecule.
@@ -241,7 +243,8 @@ def calculate_center_of_mass(symbols, coordinates):
 
     total_weight = calculate_molecular_mass(symbols)
 
-    return (running_total_dimensions / total_weight)
+    return running_total_dimensions / total_weight
+
 
 atom_colors = {
     "H": "white",
