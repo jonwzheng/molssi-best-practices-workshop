@@ -47,6 +47,25 @@ def test_calculate_angle_many(p1, p2, p3, expected_value):
     ), f"{calculated_angle} {expected_value}"
 
 
+def test_molecular_mass():
+    symbols = ['C', 'H', 'H', 'H', 'H']
+
+    calculated_mass = molecool.calculate_molecular_mass(symbols)
+
+    actual_mass = 16.04
+
+    assert pytest.approx(actual_mass, abs=1e-2) == calculated_mass
+
+def test_center_of_mass():
+    symbols = np.array(['C', 'H', 'H', 'H', 'H'])
+    coordinates = np.array([[1,1,1], [2.4,1,1], [-0.4, 1, 1], [1, 1, 2.4], [1, 1, -0.4]])
+
+    center_of_mass = molecool.calculate_center_of_mass(symbols, coordinates)
+
+    expected_center = np.array([1,1,1])
+
+    assert (center_of_mass == expected_center).all()
+
 def test_calculate_angle():
     r1 = np.array([0, 0, -1])
     r2 = np.array([0, 0, 0])
